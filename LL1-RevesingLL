@@ -1,0 +1,24 @@
+void ReverseUsingNode(struct Node *p){
+    /*
+    Sliding Pointer Approach is used
+    3 pointers are used and they are traversed 
+    As we are doing it till p becomes null so
+     when all the address are changed we will make q as the first Node
+     
+    */
+
+   struct Node *q = NULL;
+   struct Node *r = NULL;
+
+   while(p){
+    r =q;
+    q=p;
+    p=p->next;
+
+    q->next=r;
+
+   }
+
+   first =q;
+
+}
