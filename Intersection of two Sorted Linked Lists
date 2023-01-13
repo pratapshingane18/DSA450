@@ -1,0 +1,51 @@
+
+Node* findIntersection(Node* head1, Node* head2)
+{
+    
+    struct Node* firstList = head1;
+    struct Node *secondList = head2;
+    struct Node *head = NULL;
+    struct Node *curr = NULL;
+   
+    while(firstList && secondList){
+        if(firstList->data == secondList->data){
+            
+            if(head == NULL){
+                Node *t = new Node(firstList->data);
+                head = t;
+                curr = t;
+            }
+            
+            else{
+                Node *t = new Node(firstList->data);
+                curr->next =t;
+                curr = curr->next;
+                
+            }
+            
+            firstList = firstList->next;
+            secondList = secondList->next;
+          
+        }
+        
+        
+        else {
+            if(firstList->data < secondList->data){
+            firstList = firstList->next;
+            
+        }
+        else{
+            secondList = secondList->next;
+        }
+        
+        }
+       
+        
+        
+         
+        
+    }
+    
+    
+    return head;
+}
